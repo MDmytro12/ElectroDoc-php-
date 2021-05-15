@@ -2,61 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bee3344e-45fb-45ad-82f4-fdc49ba55a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Autoload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/db_param.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/admin_add_doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/admin_ch_doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/admin_ch_doc2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/admin_del_doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/admin_show_doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_add_doc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_ch_doc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_ch_doc2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_del_doc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_show_doc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/general.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/mixin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/user_add_ann.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/user_show_dos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/css/var.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/img/arrow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/img/delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/img/doc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/img/dow_img.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/img/icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/prepros.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_add_doc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_ch_doc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_ch_doc2.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_del_doc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_show_doc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/general.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/login.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/mixin.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/user_add_ann.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/user_show_dos.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/scss/var.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/user_add_ann.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tamplate/user_show_doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/cabinet.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/site/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user/cabinet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/site/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user/cabinet.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/cabinet.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +71,7 @@
       <workItem from="1621020360973" duration="1416000" />
       <workItem from="1621057800318" duration="5243000" />
       <workItem from="1621098655501" duration="3000" />
-      <workItem from="1621098697984" duration="2039000" />
+      <workItem from="1621098697984" duration="7822000" />
     </task>
     <servers />
   </component>

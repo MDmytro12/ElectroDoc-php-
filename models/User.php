@@ -3,7 +3,42 @@
 class User{
     #check registration of user
     public static function checkUser(){
+        if(isset($_POST['submit'])){
 
+            $login = $_POST['login'];
+            $password = $_POST['password'];
+
+            if( strlen($login) != 0 or strlen($password) != 0 ){
+                if(!User::checkName($login) or !User::checkPassword($password)){
+                    return 'error_input';
+                }
+
+                $db =Db::getConnection();
+
+                $sql = 'select * from user_info where password = :password and name= :name ;';
+
+                $result = $db->prepare($sql);
+                $result->bindParam(':name',$login,PDO::FETCH_ASSOC);
+                $result->bindParam(':password',$password,PDO::FETCH_ASSOC);
+                $result->execute();
+                $result = $result->fetch();
+
+                if($result){
+                    $_SESSION['id'] = $result['id'];
+
+                    return array(
+                        'id' => $result['id'],
+                        'status' => $result['status'],
+                    );
+                }else{
+                    return 'no_user';
+                }
+            }else{
+                return 'empty_field';
+            }
+        }else{
+            return false;
+        }
     }
     #check the correct input of indetificator
     public static  function checkName($name){

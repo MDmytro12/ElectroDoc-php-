@@ -19,7 +19,7 @@
 <section>
     <div class="container">
         <div class="login">
-            <form action="user/cab" method='POST' >
+            <form action="/" method='POST' >
                 <div class="login-title">Авторизація</div>
                 <div class="input-title">Ваш ідентефікатор :</div>
                 <input type="text" maxlength="30" name='login' placeholder="Введи ідентифікатор" class='input-login'>
@@ -28,9 +28,9 @@
                 <input type="submit" name='submit' value="Увійти">
             </form>
         </div>
-        <div class="error <?php if($_SESSION['error_input']){echo 'active'; }?>">Пароль або ідентефікатор введено не вірно !</div>
-        <div class="error">Не існує такого профілю!</div>
-        <div class="error <?php if($_SESSION['empty_field']){echo 'active';}?>">Не залишайте поля пустими!</div>
+        <div class="error <?php if($resultOfCheck == 'error_input'){ echo 'active';}?>">Пароль або ідентефікатор введено не вірно !</div>
+        <div class="error <?php if($resultOfCheck == 'no_user'){ echo 'active'; }?>">Не існує такого профілю!</div>
+        <div class="error <?php if($resultOfCheck == 'empty_field'){ echo 'active';}?>">Не залишайте поля пустими!</div>
     </div>
 
 </section>
