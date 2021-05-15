@@ -1,0 +1,185 @@
+@import './var';
+
+@mixin input{
+    width: 100%;
+
+    background-color: #C4C4C4;
+
+    border: 1px solid black;
+    border-radius: 30px;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: center;
+
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    
+    outline: none;
+
+    margin-bottom: 15px;
+
+    &:last-child{
+        margin-bottom: 35px;
+    }
+
+    &::placeholder{
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.23em;
+        text-align: center; 
+        color: #8D8484;
+    }
+
+    transition: background-color linear .4s;
+    &:focus{
+        background-color: #D2D2D2; 
+    }
+}
+
+@mixin btnDeactive{
+    width: 100%;
+
+    background-color: $color_dark;
+    border: none;
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: $color_light ;
+
+    padding-top: 22px;
+    padding-bottom: 22px;
+
+    transition: letter-spacing linear .3s;
+
+    &:hover{
+        letter-spacing: .45em;
+    }
+    &:active{
+        border: 2px solid $color_dark;
+        color: $color_dark;
+        background-color: $color_light;
+    }
+
+}
+@mixin btnActive{
+    width: 100%;
+
+    background-color: $color_light;
+    border: 1px solid $color_light;
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: $color_dark ;
+
+    padding-top: 22px;
+    padding-bottom: 22px;
+
+    transition: letter-spacing linear .3s;
+
+    &:hover{
+        letter-spacing: .45em;
+    }
+    &:active{
+        border: 2px solid $color_dark;
+        color: $color_dark;
+        background-color: $color_light;
+    }
+}
+
+@mixin link{
+    background-color: $color_dark;
+
+    border: 1px solid $color_light;
+
+    color: $color_light;
+
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.32em;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    min-width: 620px;
+
+    transition: background-color linear .4s;
+
+    &:hover{
+        background-color: #053C4E;
+    }
+}
+
+@mixin linkActive{
+    background-color: $color_light;
+
+    border: none;
+
+    color: $color_dark;
+
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.32em;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    min-width: 620px;
+
+    transition: background-color linear .4s;
+}
+
+@mixin textArea{
+    resize: none;
+
+    margin-top: 15px;
+    background-color: #C4C4C4;
+
+    border-radius: 30px;
+    border: 1px solid black;
+
+    width: 100%;
+    overflow: hidden;
+
+    min-height: 190px;
+
+    outline: none;
+
+    &::placeholder{
+        
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.23em;
+        text-align: left; 
+        color: #8D8484;
+    }
+
+    transition: background-color linear .4s;
+    &:focus{
+        background-color:#D2D2D2; 
+    }
+
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.23em;
+    text-align: left; 
+    color: black;
+}
+

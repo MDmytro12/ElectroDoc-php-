@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/user_show_dos.css">
+    <link rel="stylesheet" href="./css/admin_show_doc.css">
+    <link rel="stylesheet" href="./css/admin_add_doc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroDoc!</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="icon">
+                <img src="./img/icon.svg" alt="Icon!">
+                <a href="#" class='link-cab' >Мій кабінет</a>
+                <a href="#" class='link-admin  active'>Адміністрування</a>
+                <a href="#" class='link-logout' >Вихід</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- user informatoin -->
+    <section>
+        <div class="container">
+            <div class="user-info">
+                <div class="item-1">
+                    <div class="info-title">Підрозділ :  <span>СТРОЙОВА ЧАСТИНА</span> ;</div>
+                    <div class="info-title">Cтатус :  <span class='status'>Адміністратор</span> ;</div>
+                </div>
+                <div class="info-title">Ідентефікатор користувача : <span>chief_of_English_department</span> ;</div>
+            </div>
+        </div>
+    </section>
+    <!-- user informatoin -->
+
+    <!-- admin links -->
+    <section>
+        <div class="container">
+            <div class="admin-link">
+                <a href="#" class='link-add-doc active'>Оприлюднити документ</a>
+                <a href="#" class='link-ch-doc'>Змінити існуючі документи</a>
+                <a href="#" class='link-del-doc'>Видалити документ зі списку </a>
+            </div>
+        </div>
+    </section>
+    <!-- admin links -->
+
+    <!-- process of adding of new document -->
+    <section>
+        <div class="container">
+            <div class="new-doc">
+                <div class="btn-download">
+                    <input type="submit" name='btn-img' value='Завантажте документ'>
+                    <img src="./img/arrow.svg" class='arrow'>
+                </div>
+                <div class="img">
+                    <div class="img1">
+                        <img src="./img/dow_img.svg" class='img-img'>
+                    </div>
+                </div>                
+                <div class="add-per">
+                    <div class="per-title">
+                        Позначте підрозділи , які мають право перегляду цього повідомлення :
+                    </div>
+                    <ul>
+                        <li class="list-item">
+                            <input type="checkbox" name='ksn' id='li-1' > <label for="li-1">кафедра суспільних наук ;</label>
+                        </li>
+                        <li class="list-item">
+                            <input type="checkbox" name='ksn' id='li-2' > <label for="li-2">кафедра суспільних наук ;</label> 
+                        </li>
+                        <li class="list-item">
+                            <input type="checkbox" name='ksn' id='li-3' > <label for="li-3">Відзначити всі підрозділи.</label> </li>
+                        </li>
+                    </ul>
+                </div>
+                <form action="#" method='POST'>
+                    <div class="form-title">Добавте інформацію під документ  :</div>
+                    <textarea name="content" class='t-area' placeholder="Введи текст ..."></textarea>
+                    <input type="submit" value="Оприлюднити документ" class='input-submit'>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- process of adding of new document -->
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-year">2021 рік</div>
+                <div class="production">
+                    <div class="pro-title">Виробництво :</div>
+                    <div class="pro-name">@DimasProdaktion .</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

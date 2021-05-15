@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/user_show_dos.css">
+    <link rel="stylesheet" href="./css/user_add_ann.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroDoc!</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="icon">
+                <img src="./img/icon.svg" alt="Icon!">
+                <a href="#" class='link-cab active'>Мій кабінет</a>
+                <a href="#" class='link-logout'>Вихід</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- user informatoin -->
+    <section>
+        <div class="container">
+            <div class="user-info">
+                <div class="item-1">
+                    <div class="info-title">Кафедра :  <span>ІНОЗЕМНИХ МОВ</span> ;</div>
+                    <div class="info-title">Cтатус :  <span class='status'>Користувач</span> ;</div>
+                </div>
+                <div class="info-title">Ідентефікатор користувача : <span>chief_of_English_department</span> ;</div>
+            </div>
+        </div>
+    </section>
+    <!-- user informatoin -->
+
+    <!-- user buttons -->
+    <section>
+        <div class="container">
+            <div class="user-btn">
+                <a href="#" class='btn-doc'>Документи</a>
+                <a href="#" class='btn-ann active'>Додати оголошення</a>
+            </div>
+            
+        </div>
+    </section>
+    <!-- user buttons -->
+
+    <!-- adding a new announce -->
+    <section>
+        <div class="container">
+            <div class="add-ann-wrapper">
+                <div class="add-ann">
+                    <div class="ann-title">
+                        ОГОЛОШЕННЯ
+                    </div>
+                    <div class="input">
+                        <div class ='input-author'>Автор :</div>
+                        <input type="text" name='name' maxlength="255" placeholder="Введи ідентифікатор автора оголошення">
+                    </div>
+                    <div class="input-author">Текст оголошення :</div>
+                    <textarea name="content" placeholder="Введи текст оголошення ..."></textarea>
+                    <input type="submit" name='submit' class='input-submit' value='Оприлюднити оголошення'>
+                </div>
+            </div>
+                
+        </div>
+    </section>
+    <!-- adding a new announce -->
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-year">2021 рік</div>
+                <div class="production">
+                    <div class="pro-title">Виробництво :</div>
+                    <div class="pro-name">@DimasProdaktion .</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

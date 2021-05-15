@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E5B74;
+  font-family: "Montserrat";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, a, img {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  background-color: #0E5B74;
+}
+
+.icon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+header {
+  background-color: #0E5B74;
+}
+
+.icon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 100px;
+}
+
+section {
+  background-color: #C0CDD2;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.login {
+  width: 100%;
+  margin-left: 100px;
+  border: 2px solid #0E5B74;
+  border-radius: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 35px;
+}
+.login .login-title {
+  text-align: center;
+  font-size: 61px;
+  font-weight: 600;
+  letter-spacing: 0.47em;
+  color: #0E5B74;
+  margin-bottom: 60px;
+}
+.login .input-title {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.login .input-login, .login .input-password {
+  width: 100%;
+  background-color: #C4C4C4;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  outline: none;
+  margin-bottom: 15px;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+}
+.login .input-login:last-child, .login .input-password:last-child {
+  margin-bottom: 35px;
+}
+.login .input-login::-webkit-input-placeholder, .login .input-password::-webkit-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.login .input-login::-moz-placeholder, .login .input-password::-moz-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.login .input-login:-ms-input-placeholder, .login .input-password:-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.login .input-login::-ms-input-placeholder, .login .input-password::-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.login .input-login::placeholder, .login .input-password::placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.login .input-login:focus, .login .input-password:focus {
+  background-color: #D2D2D2;
+}
+.login input[type=submit] {
+  width: 100%;
+  background-color: #0E5B74;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #C0CDD2;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: letter-spacing linear 0.3s;
+  transition: letter-spacing linear 0.3s;
+}
+.login input[type=submit]:hover {
+  letter-spacing: 0.45em;
+}
+.login input[type=submit]:active {
+  border: 2px solid #0E5B74;
+  color: #0E5B74;
+  background-color: #C0CDD2;
+}
+
+.error {
+  width: 100%;
+  margin-left: 100px;
+  padding-top: 15px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.23em;
+  color: red;
+  display: none;
+}
+
+.error.active {
+  display: block;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 100px;
+  padding-top: 20px;
+}
+.footer .footer-year, .footer .pro-title {
+  font-size: 20px;
+  letter-spacing: 0.56em;
+  color: #C0CDD2;
+  text-align: left;
+}
+.footer .production {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .production .pro-name {
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.23em;
+  margin-left: 20px;
+  -webkit-transition: -webkit-transform linear 0.4s;
+  transition: -webkit-transform linear 0.4s;
+  transition: transform linear 0.4s;
+  transition: transform linear 0.4s, -webkit-transform linear 0.4s;
+}
+.footer .production .pro-name:hover {
+  -webkit-transform: rotate(-13deg);
+          transform: rotate(-13deg);
+}

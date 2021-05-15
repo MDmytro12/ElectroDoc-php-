@@ -1,0 +1,31 @@
+.footer{
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    .footer-year , .pro-title{
+        font-size: 20px;
+        letter-spacing: 0.56em;
+        color: $color_light;
+        text-align: left;
+    }
+
+    .production{
+        display: flex;
+        .pro-name{
+            font-size: 20px;
+            color: white;
+            letter-spacing: 0.23em;
+            margin-left: 20px;
+
+            transition: transform linear .4s;
+
+            &:hover{
+                transform: rotate(-13deg);
+            }
+        }
+    }
+}

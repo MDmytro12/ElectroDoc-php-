@@ -1,0 +1,137 @@
+@import './var';
+@import './general';
+@import './mixin';
+
+.admin-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 25px;
+    padding-bottom: 40px;
+
+    a{
+        text-decoration: none;
+
+        font-size: 24px;
+        letter-spacing: 0.32em;
+        font-weight: 400;
+        text-align: center;
+        color: $color_dark;
+        border: 1px solid $color_dark;
+        max-width: 380px;
+
+        transition: background-color linear .4s;
+
+
+        &:hover{
+            background-color: #AAB2B5;
+        }
+    }
+    a.active{
+        background-color: $color_dark;
+        color: $color_light;
+        border: 1px solid $color_dark;
+        font-weight: 600;
+    }
+}
+
+.new-doc{
+    width: 100%;
+    padding-bottom: 25px;
+
+    .btn-download{
+        
+        padding-bottom: 40px;
+        position: relative;
+        input[name='btn-img']{
+            width: 100%;
+
+            @include btnDeactive;
+            font-size: 48px;
+        }
+        .arrow{
+            position: absolute;
+
+            top: 20%;
+            right: 87%;
+
+            z-index: 1;
+        }
+    }
+    .img{
+        border: 2px solid $color_dark;
+        min-height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        margin-bottom: 10px;
+    }
+    .add-per{
+        padding-top: 15px;
+        .per-title{
+            font-size: 28px;
+            letter-spacing: 0.21em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        ul{
+            list-style: none;
+        }
+        .list-item{
+            font-size: 24px;
+            letter-spacing: 0.2em;
+            font-weight: 400;
+            text-align: left;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            position: relative;
+        }
+        input[type=checkbox]{
+            display: none;
+        }
+        input[type=checkbox] + label:before{
+            content: '\2714';
+
+            border-radius: 15px;
+
+            width: 30px;
+            height: 30px;
+
+            background-color: $color_dark;
+
+            color: $color_dark;
+
+            padding-left: 4px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+
+            text-align: center;
+            padding-bottom: 4px;
+        }
+        input[type=checkbox]:checked + label:before{
+            color: $color_light;
+        }
+        
+    }   
+    form{
+        padding-top: 25px;
+
+        .form-title{
+            text-align: left;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.21em;
+            margin-bottom: 15px;
+        }
+        .t-area{
+            @include textArea;
+            margin-bottom: 40px;
+        }
+        .input-submit{
+            @include btnDeactive;
+        }
+    }
+    
+}

@@ -1,0 +1,38 @@
+@import './var';
+@import './mixin';
+@import './general';
+@import './footer';
+
+header{
+    .icon{
+        .link-cab{
+            min-width: 320px;
+        }
+        .link-cab.active{
+            
+        }
+        .link-admin{
+            @include link;
+            min-width: 450px;
+        }
+        .link-admin.active{
+            @include linkActive;
+            min-width: 450px;
+        }
+    }
+
+}
+section{
+    .user-info{
+        span[class='status']{
+        color: #E45528;
+        }      
+    }
+    
+}
+
+
+
+
+
+

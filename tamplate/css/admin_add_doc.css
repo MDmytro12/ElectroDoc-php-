@@ -1,0 +1,263 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E5B74;
+  font-family: "Montserrat";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, a, img {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  background-color: #0E5B74;
+}
+
+.icon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.admin-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 25px;
+  padding-bottom: 40px;
+}
+.admin-link a {
+  text-decoration: none;
+  font-size: 24px;
+  letter-spacing: 0.32em;
+  font-weight: 400;
+  text-align: center;
+  color: #0E5B74;
+  border: 1px solid #0E5B74;
+  max-width: 380px;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+}
+.admin-link a:hover {
+  background-color: #AAB2B5;
+}
+.admin-link a.active {
+  background-color: #0E5B74;
+  color: #C0CDD2;
+  border: 1px solid #0E5B74;
+  font-weight: 600;
+}
+
+.new-doc {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.new-doc .btn-download {
+  padding-bottom: 40px;
+  position: relative;
+}
+.new-doc .btn-download input[name=btn-img] {
+  width: 100%;
+  width: 100%;
+  background-color: #0E5B74;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #C0CDD2;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: letter-spacing linear 0.3s;
+  transition: letter-spacing linear 0.3s;
+  font-size: 48px;
+}
+.new-doc .btn-download input[name=btn-img]:hover {
+  letter-spacing: 0.45em;
+}
+.new-doc .btn-download input[name=btn-img]:active {
+  border: 2px solid #0E5B74;
+  color: #0E5B74;
+  background-color: #C0CDD2;
+}
+.new-doc .btn-download .arrow {
+  position: absolute;
+  top: 20%;
+  right: 87%;
+  z-index: 1;
+}
+.new-doc .img {
+  border: 2px solid #0E5B74;
+  min-height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+.new-doc .add-per {
+  padding-top: 15px;
+}
+.new-doc .add-per .per-title {
+  font-size: 28px;
+  letter-spacing: 0.21em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.new-doc .add-per ul {
+  list-style: none;
+}
+.new-doc .add-per .list-item {
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 20px;
+  padding-left: 60px;
+  position: relative;
+}
+.new-doc .add-per input[type=checkbox] {
+  display: none;
+}
+.new-doc .add-per input[type=checkbox] + label:before {
+  content: "✔";
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: #0E5B74;
+  color: #0E5B74;
+  padding-left: 4px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  text-align: center;
+  padding-bottom: 4px;
+}
+.new-doc .add-per input[type=checkbox]:checked + label:before {
+  color: #C0CDD2;
+}
+.new-doc form {
+  padding-top: 25px;
+}
+.new-doc form .form-title {
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.21em;
+  margin-bottom: 15px;
+}
+.new-doc form .t-area {
+  resize: none;
+  margin-top: 15px;
+  background-color: #C4C4C4;
+  border-radius: 30px;
+  border: 1px solid black;
+  width: 100%;
+  overflow: hidden;
+  min-height: 190px;
+  outline: none;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: black;
+  margin-bottom: 40px;
+}
+.new-doc form .t-area::-webkit-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.new-doc form .t-area::-moz-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.new-doc form .t-area:-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.new-doc form .t-area::-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.new-doc form .t-area::placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.new-doc form .t-area:focus {
+  background-color: #D2D2D2;
+}
+.new-doc form .input-submit {
+  width: 100%;
+  background-color: #0E5B74;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #C0CDD2;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: letter-spacing linear 0.3s;
+  transition: letter-spacing linear 0.3s;
+}
+.new-doc form .input-submit:hover {
+  letter-spacing: 0.45em;
+}
+.new-doc form .input-submit:active {
+  border: 2px solid #0E5B74;
+  color: #0E5B74;
+  background-color: #C0CDD2;
+}

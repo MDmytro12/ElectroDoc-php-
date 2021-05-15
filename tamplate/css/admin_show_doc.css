@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E5B74;
+  font-family: "Montserrat";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, a, img {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  background-color: #0E5B74;
+}
+
+.icon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+.footer .footer-year, .footer .pro-title {
+  font-size: 20px;
+  letter-spacing: 0.56em;
+  color: #C0CDD2;
+  text-align: left;
+}
+.footer .production {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .production .pro-name {
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.23em;
+  margin-left: 20px;
+  -webkit-transition: -webkit-transform linear 0.4s;
+  transition: -webkit-transform linear 0.4s;
+  transition: transform linear 0.4s;
+  transition: transform linear 0.4s, -webkit-transform linear 0.4s;
+}
+.footer .production .pro-name:hover {
+  -webkit-transform: rotate(-13deg);
+          transform: rotate(-13deg);
+}
+
+header .icon .link-cab {
+  min-width: 320px;
+}
+header .icon .link-admin {
+  background-color: #0E5B74;
+  border: 1px solid #C0CDD2;
+  color: #C0CDD2;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.32em;
+  font-weight: 600;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 620px;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+  min-width: 450px;
+}
+header .icon .link-admin:hover {
+  background-color: #053C4E;
+}
+header .icon .link-admin.active {
+  background-color: #C0CDD2;
+  border: none;
+  color: #0E5B74;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.32em;
+  font-weight: 600;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 620px;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+  min-width: 450px;
+}
+
+section .user-info span[class=status] {
+  color: #E45528;
+}

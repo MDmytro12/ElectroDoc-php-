@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E5B74;
+  font-family: "Montserrat";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, a, img {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  background-color: #0E5B74;
+}
+
+.icon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.doc-table {
+  position: relative;
+  padding-bottom: 90px;
+}
+.doc-table:after {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 70px;
+  background-color: #C0CDD2;
+  border-right: 3px solid #0E5B74;
+  border-left: 3px solid #0E5B74;
+  right: 19.55%;
+}
+.doc-table .head-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.doc-table .head-table .head-item1, .doc-table .head-table .head-item2 {
+  font-size: 26px;
+  letter-spacing: 0.32em;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #0E5B74;
+  border-right: 3px solid #0E5B74;
+}
+.doc-table .head-table .head-item1 {
+  width: 30%;
+}
+.doc-table .head-table .head-item2 {
+  width: 50%;
+}
+.doc-table .item-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.doc-table .item-table .date, .doc-table .item-table .name-doc {
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.32em;
+  border-bottom: 1px solid #0E5B74;
+  border-right: 3px solid #0E5B74;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.doc-table .item-table .edit {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-decoration: underline;
+  color: #8D3B3B;
+  width: 18%;
+  border-bottom: 1px solid #0E5B74;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.doc-table .item-table .date {
+  width: 30%;
+}
+.doc-table .item-table .name-doc {
+  width: 50%;
+}
+
+.info-table .all-ann, .info-table .all-doc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-align: center;
+}
+.info-table .count-doc, .info-table .count-ann {
+  width: 50%;
+  margin-bottom: 20px;
+}
+.info-table .count-doc {
+  margin-bottom: 50px;
+}

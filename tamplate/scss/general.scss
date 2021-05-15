@@ -1,0 +1,33 @@
+@import './var';
+body{
+    margin: 0;
+    padding: 0;
+    background-color: $color_dark;
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+ul , a , img {
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 1300px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+input{
+    box-sizing: border-box;
+}
+header{
+    background-color: $color_dark;
+}
+
+.icon{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

@@ -1,0 +1,47 @@
+@import './var';
+@import './mixin';
+@import './footer';
+
+.add-ann{
+    width: 100%;
+    padding-bottom: 60px;
+
+    .ann-title{
+        font-size: 39px;
+        font-weight: 700;
+        letter-spacing: 0.52em;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .input-author{
+        font-size: 28px;
+        font-weight: 400;
+        text-align: left;
+        letter-spacing: 0.32em;
+    }
+    .input_author:last-child{
+        margin-bottom: 15px;
+    }
+    input[name='name']{
+        @include input;
+        width: 85%;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    textarea{
+        @include textArea;
+
+        margin-bottom: 30px;
+    }
+    input[type='submit']{
+        @include btnDeactive;
+    }
+}

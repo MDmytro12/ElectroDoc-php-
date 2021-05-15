@@ -1,0 +1,185 @@
+.ch-doc form .title, .ch-doc form .doc-name {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-align: center;
+}
+.ch-doc form .title {
+  height: 100%;
+}
+.ch-doc form .input-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+.ch-doc form .input {
+  width: 100%;
+  background-color: #C4C4C4;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  outline: none;
+  margin-bottom: 15px;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+  max-width: 900px;
+}
+.ch-doc form .input:last-child {
+  margin-bottom: 35px;
+}
+.ch-doc form .input::-webkit-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.ch-doc form .input::-moz-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.ch-doc form .input:-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.ch-doc form .input::-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.ch-doc form .input::placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: center;
+  color: #8D8484;
+}
+.ch-doc form .input:focus {
+  background-color: #D2D2D2;
+}
+.ch-doc form .input:last-child {
+  margin-bottom: 0;
+}
+.ch-doc form input[name=doc-name] {
+  max-width: 1100px;
+}
+.ch-doc form input[name=doc-date] {
+  max-width: 930px;
+}
+.ch-doc form .edit-doc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 25px;
+}
+.ch-doc form .doc-name {
+  font-weight: 600;
+  text-align: center;
+  width: 40%;
+}
+.ch-doc .title.t1 {
+  text-align: left;
+  margin-bottom: 5px;
+}
+.ch-doc textarea {
+  resize: none;
+  margin-top: 15px;
+  background-color: #C4C4C4;
+  border-radius: 30px;
+  border: 1px solid black;
+  width: 100%;
+  overflow: hidden;
+  min-height: 190px;
+  outline: none;
+  -webkit-transition: background-color linear 0.4s;
+  transition: background-color linear 0.4s;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: black;
+  margin-bottom: 20px;
+}
+.ch-doc textarea::-webkit-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.ch-doc textarea::-moz-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.ch-doc textarea:-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.ch-doc textarea::-ms-input-placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.ch-doc textarea::placeholder {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.23em;
+  text-align: left;
+  color: #8D8484;
+}
+.ch-doc textarea:focus {
+  background-color: #D2D2D2;
+}
+.ch-doc input[type=submit] {
+  width: 100%;
+  background-color: #0E5B74;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #C0CDD2;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: letter-spacing linear 0.3s;
+  transition: letter-spacing linear 0.3s;
+  margin-bottom: 40px;
+}
+.ch-doc input[type=submit]:hover {
+  letter-spacing: 0.45em;
+}
+.ch-doc input[type=submit]:active {
+  border: 2px solid #0E5B74;
+  color: #0E5B74;
+  background-color: #C0CDD2;
+}

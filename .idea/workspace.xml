@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bee3344e-45fb-45ad-82f4-fdc49ba55a99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/db_param.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/admin_add_doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/admin_ch_doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/admin_ch_doc2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/admin_del_doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/admin_show_doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_add_doc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_ch_doc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_ch_doc2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_del_doc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/admin_show_doc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/general.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/mixin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/user_add_ann.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/user_show_dos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/css/var.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/img/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/img/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/img/doc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/img/dow_img.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/img/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/prepros.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_add_doc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_ch_doc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_ch_doc2.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_del_doc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/admin_show_doc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/general.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/login.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/user_add_ann.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/user_show_dos.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/scss/var.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/user_add_ann.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tamplate/user_show_doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/cabinet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/site/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/cabinet.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1sJMr3TwSwXebbnqpPXVhAXDrDH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tamplate/css" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\tamplate\css" />
+      <recent name="C:\wamp64\www\views\site" />
+      <recent name="C:\wamp64\www" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bee3344e-45fb-45ad-82f4-fdc49ba55a99" name="Default Changelist" comment="" />
+      <created>1620586437511</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620586437511</updated>
+      <workItem from="1620586439575" duration="826000" />
+      <workItem from="1620735482118" duration="23885000" />
+      <workItem from="1620798778665" duration="1121000" />
+      <workItem from="1620904061569" duration="12152000" />
+      <workItem from="1620926343631" duration="1267000" />
+      <workItem from="1620931838546" duration="1666000" />
+      <workItem from="1620934446867" duration="983000" />
+      <workItem from="1620936132059" duration="528000" />
+      <workItem from="1621020360973" duration="1416000" />
+      <workItem from="1621057800318" duration="5243000" />
+      <workItem from="1621098655501" duration="3000" />
+      <workItem from="1621098697984" duration="2039000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

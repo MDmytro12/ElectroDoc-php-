@@ -1,0 +1,101 @@
+@import './var';
+@import './general';
+@import './mixin';
+
+.doc-table{
+    position: relative;
+    padding-bottom: 90px;
+    &:after{
+        box-sizing: content-box;
+
+        content: '';
+        position: absolute;
+
+        width: 50%;
+        height: 70px;
+
+        background-color: $color_light;
+
+        border-right: 3px solid $color_dark;
+        border-left: 3px solid $color_dark;
+
+        right: 19.55%;
+    }
+
+    .head-table{
+        display: flex;
+
+        .head-item1 , .head-item2{
+            font-size: 26px;
+            letter-spacing: 0.32em;
+            text-align: center;
+            font-weight: 600;
+
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            border-bottom: 1px solid $color_dark;
+            border-right: 3px solid $color_dark;
+        }
+        
+        .head-item1{
+            width: 30%;
+        }
+        .head-item2{
+            width: 50%;
+        }
+    }
+    .item-table{
+        display: flex;
+        
+        .date , .name-doc{
+            font-size: 26px;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 0.32em;
+            border-bottom: 1px solid $color_dark;
+            border-right: 3px solid $color_dark;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .edit{
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-align: center;
+            text-decoration: underline;
+            color: #8D3B3B;
+            width: 18%;
+            border-bottom: 1px solid $color_dark;
+            padding-bottom: 15px;
+            padding-top: 15px;
+        }
+        .date{
+            width: 30%;
+
+        }
+        .name-doc{
+            width: 50%;
+        }
+    }
+}
+
+.info-table{
+
+    .all-ann , .all-doc{
+        display: flex;
+
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+        text-align: center;
+    }
+
+    .count-doc , .count-ann {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    .count-doc{
+        margin-bottom: 50px;
+    }
+}
