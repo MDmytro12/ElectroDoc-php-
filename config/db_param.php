@@ -4,4 +4,4 @@ return array(
     'dbname' => 'electrodoc',
     'user' => 'root',
     'password' => '',
-);
+); 
