@@ -14,15 +14,15 @@ class User{
                 }
 
                 $db =Db::getConnection();
-
-                $sql = 'select * from user_info where password = :password and name= :name ;';
-
-                $result = $db->prepare($sql);
-                $result->bindParam(':name',$login,PDO::FETCH_ASSOC);
-                $result->bindParam(':password',$password,PDO::FETCH_ASSOC);
-                $result->execute();
-                $result = $result->fetch();
-
+                
+                $password = $db->real_escape_string(trim($password));
+                $login = $db->real_escape_string(trim($login));
+                $result = $db->query("select * from user_info where `login`='$login' and `password`='$password';");
+                
+                $result = $result->fetch_assoc();
+                
+                $db->close();
+                
                 if($result){
                     $_SESSION['id'] = $result['id'];
 
@@ -59,6 +59,22 @@ class User{
     }
     #check the logging of user on site
     public static  function checkLogging(){
-
+        if(isset($_SESSION['id']) and !empty($_SESSION['id'])){
+            return true;
+        }
+        return false;
+    }
+    #return status of user on site
+    public static function getStatus(){
+        if(isset($_SESSION['id']) and !empty($_SESSION['id'])){
+            $db = Db::getConnection();
+            
+            $id = $db->real_escape_string(trim($_SESSION['id']));
+            $result = $db->query("select status from user_info where `id` = '$id'");
+            
+            $db->close();
+            
+            return $result->fetch_assoc()['status'];
+        }
     }
 }

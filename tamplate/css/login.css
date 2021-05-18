@@ -54,7 +54,6 @@ header {
           justify-content: start;
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-left: 100px;
 }
 
 section {
@@ -65,7 +64,6 @@ section {
 
 .login {
   width: 100%;
-  margin-left: 100px;
   border: 2px solid #0E5B74;
   border-radius: 30px;
   padding-left: 25px;
@@ -191,7 +189,6 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-left: 100px;
   padding-top: 20px;
 }
 .footer .footer-year, .footer .pro-title {
