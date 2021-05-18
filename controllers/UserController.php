@@ -4,6 +4,10 @@ class UserController{
     public function actionCabinet(){
         if(User::checkLogging()){
             $_SESSION['user_btn'] = 'doc' ;
+            
+            $userInfo = User::getAllUserInfo();
+            $documentInfo = Document::getAllDocumentInfo();
+            
             require_once(ROOT.'/views/user/cabinet.php'); 
         }else{
             header('Location: /');
@@ -18,6 +22,9 @@ class UserController{
     public function actionAddAnnounce(){
         if(User::checkLogging()){
             $_SESSION['user_btn'] = 'ann';
+            
+            $userInfo = User::getAllUserInfo();
+            
             require_once(ROOT.'/views/user/add_ann.php'); 
         }else{
             header('Location: /');

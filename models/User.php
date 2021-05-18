@@ -77,4 +77,16 @@ class User{
             return $result->fetch_assoc()['status'];
         }
     }
+    #return all information about user whithout password and login
+    public static function getAllUserInfo(){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string(trim($_SESSION['id']));
+        
+        $sql = "select * from users where `id` = '$id'";
+        
+        $result = $db->query($sql);
+        
+        return $result->fetch_all(MYSQLI_ASSOC)[0];
+    }
 }

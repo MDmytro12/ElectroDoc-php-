@@ -24,10 +24,10 @@
         <div class="container">
             <div class="user-info">
                 <div class="item-1">
-                    <div class="info-title">Кафедра :  <span>ІНОЗЕМНИХ МОВ</span> ;</div>
+                    <div class="info-title"><?php echo $userInfo['type_unit']; ?> :  <span><?php echo $userInfo['name_unit'];?></span> ;</div>
                     <div class="info-title">Cтатус :  <span class='status'>Користувач</span> ;</div>
                 </div>
-                <div class="info-title">Ідентефікатор користувача : <span>chief_of_English_department</span> ;</div>
+                <div class="info-title">Ідентефікатор користувача : <span><?php echo $userInfo['identef'];?></span> ;</div>
             </div>
         </div>
     </section>
