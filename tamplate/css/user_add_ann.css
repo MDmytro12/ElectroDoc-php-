@@ -209,3 +209,25 @@
   color: #0E5B74;
   background-color: #C0CDD2;
 }
+.ann_done{
+    padding-top: 15px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #57a447;
+    text-align: center;
+    display: none;
+}
+.ann_done.active{
+    display: block;
+}
+.ann_error{
+    padding-top: 15px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #EB042A;
+    text-align: center;
+    display: none   ;
+}
+.ann_error.active{
+    display: block;
+}

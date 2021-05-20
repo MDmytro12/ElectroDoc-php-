@@ -89,4 +89,46 @@ class User{
         
         return $result->fetch_all(MYSQLI_ASSOC)[0];
     }
+    #return count of users with admin
+    public static function getCountOfAllUsers(){
+        $db = Db::getConnection();
+        
+        $sql = 'select COUNT(id) as count from user_info ';
+        $reusult = $db->query($sql);
+        
+        $db->close();
+        
+        return $reusult->fetch_all(MYSQLI_ASSOC)[0]['count'];
+    }
+    #return masive of names of all users
+    public static function getAllNamesUsers(){
+        $db = Db::getConnection();
+        
+        $sql = 'select identef from users ;';
+        
+        $result = $db->query($sql);
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+        
+        $db->close();
+        
+        $newMasive = [];
+        
+        foreach($result as $item){
+            array_push($newMasive , $item['identef']);
+        }
+        
+        return $newMasive;
+    }
+    #return true if name in form is in masive
+    public static function checkUserName($userName){
+        $allNames = User::getAllNamesUsers();
+        
+        foreach($allNames as $item){
+            if($item == $userName){
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }

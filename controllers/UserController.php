@@ -5,8 +5,11 @@ class UserController{
         if(User::checkLogging()){
             $_SESSION['user_btn'] = 'doc' ;
             
+            Document::checkCorrectBrowsedMassive();
+            
             $userInfo = User::getAllUserInfo();
             $documentInfo = Document::getAllDocumentInfo();
+            $announceInfo = Announce::getAllAnnounceInfo();
             
             require_once(ROOT.'/views/user/cabinet.php'); 
         }else{
@@ -22,8 +25,26 @@ class UserController{
     public function actionAddAnnounce(){
         if(User::checkLogging()){
             $_SESSION['user_btn'] = 'ann';
+            $send = false ;
+            $noUserName = false;
             
-            $userInfo = User::getAllUserInfo();
+            if(isset($_POST['name']) and !empty($_POST['name']) and !empty($_POST['content'])){
+                $author = $_POST['name'];
+                $content = $_POST['content'];
+                
+                
+                
+                $resultOfCheck = User::checkUserName($author);
+                print($resultOfCheck);
+                if($resultOfCheck){
+                    Announce::addNewAnnounce($author, $content);
+                    $send = true;
+                }else{
+                    $noUserName = true;
+                }          
+            }
+            
+            $userInfo = User::getAllUserInfo(); 
             
             require_once(ROOT.'/views/user/add_ann.php'); 
         }else{

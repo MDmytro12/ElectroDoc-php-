@@ -21,7 +21,7 @@
                     </div>
                 </div>  
             <?php endforeach;?>
-        </div>
+        </div>              
     </section>
     <!-- document information -->
 
@@ -29,16 +29,18 @@
     <section>
         <div class="container"> 
             <div class="ann-wrapper">
-                <div>
-                   <div class="ann">
-                    <div class="ann-title">РЕЗОЛЮЦІЯ</div>
-                    <div class="ann-content">інормація ;</div>
-                    <div class="info-ann">
-                        <div class="ann-author">Автор : <span>Medvedv Dmytro</span></div>
-                        <div class="ann-date">Дата : <span> 21.04.2021</span></div>
+                <?php foreach($announceInfo as $item):?>
+                    <div>
+                       <div class="ann">
+                            <div class="ann-title">ОГОЛОШЕННЯ</div>
+                            <div class="ann-content"><?php echo $item['content']?></div>
+                            <div class="info-ann">
+                                <div class="ann-author">Автор :<span><?php echo $item['author'];?></span></div>
+                                <div class="ann-date">Дата :<span><?php echo Document::getCorrectDate($item['date_publish']);?></span></div>
+                            </div>
+                        </div> 
                     </div>
-                </div> 
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
     </section>

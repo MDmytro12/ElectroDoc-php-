@@ -326,7 +326,7 @@ header .link-logout.active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 5px;
+  padding-top: 15px;
   padding-bottom: 40px;
 }
 .block-sup-doc .under-doc, .block-sup-doc .browsed {
@@ -345,7 +345,8 @@ header .link-logout.active {
 .ann-wrapper .ann {
   width: 100%;
   border: 1px solid #0E5B74;
-  padding: 20px 10px 10px 10px;
+  padding: 20px 25px 10px 25px;
+  margin-bottom: 30px;
 }
 .ann-wrapper .ann .ann-title {
   font-size: 28px;
@@ -359,7 +360,7 @@ header .link-logout.active {
   font-weight: 400;
   letter-spacing: 0.32em;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .ann-wrapper .ann .info-ann {
   font-weight: 600;
@@ -378,6 +379,7 @@ header .link-logout.active {
 }
 .ann-wrapper .ann .info-ann .ann-author > span, .ann-wrapper .ann .info-ann .ann-date > span {
   font-weight: 400;
+  letter-spacing: .3em;
 }
 
 .footer {

@@ -11,20 +11,6 @@ class Document{
         
         $query = $db->query($sql);
         
-//        $result = array();
-//        $count = 0;
-//        
-//        while($row = $query->fetch_assoc()){
-//            $result[$count]['id'] = $row['id'];
-//            $result[$count]['author'] = $row['author'];
-//            $result[$count]['content'] = $row['content'];
-//            $result[$count]['img_path'] = $row['img_path'];
-//            $result[$count]['date_publish'] = $row['date_publish'];
-//            $result[$count]['browsed'] = $row['browsed'];
-//            $count++;
-//        }
-       
-        
         return $query->fetch_all(MYSQLI_ASSOC);
     }
     #reutrn path to document photo 
@@ -92,6 +78,96 @@ class Document{
         }
         
         return $day.$month.$year.' року.';
+    }
+    #rewriting of masive with status of browsed
+    public static function checkCorrectBrowsedMassive(){
+        $db = Db::getConnection();
+        
+        $sql = 'select id , browsed from docs ;';
+        $result = $db->query($sql);
+        
+        $allDocumentInfo = $result->fetch_all(MYSQLI_ASSOC);
+        
+        $sql = 'select id , browsed from users;';
+        $result = $db->query($sql);
+        
+        $allUserInfo = $result->fetch_all(MYSQLI_ASSOC);
+        
+        $countOfUser = (int)User::getCountOfAllUsers();
+        $countOfDocument = (int)Document::getCountOfAllDocument();
+        
+        if($countOfUser > count(explode(',',$allDocumentInfo[0]['browsed']))){
+            $countOfNewUser = $countOfUser - count(explode(',',$allDocumentInfo[0]['browsed']));
+            
+            foreach($allDocumentInfo as $item_docs){
+                $new_variable = explode(',',$item_docs['browsed']);
+                
+                for($i =  0 ; $i < $countOfNewUser ; $i++ ){
+                    array_push($new_variable , '0');
+                }
+                $id = $db->real_escape_string($item_docs['id']);
+                $browsed = $db->real_escape_string(implode(',',$new_variable));
+                $sql = "update docs set `browsed` = '$browsed' where `id` = '$id'";
+                $result = $db->query($sql);
+            }
+            
+        }
+        $emptyUser = [] ;
+            
+        foreach($allUserInfo as $index => $item_u){
+            if(strlen($item_u['browsed']) == 0){
+                array_push($emptyUser , $index);
+            }
+            
+        }
+
+        if(count($emptyUser) != 0 ){
+            foreach($emptyUser as $item){
+                $masive = [];
+                for($i=0;$i<$countOfDocument;$i++){
+                    array_push($masive , '0');
+                }
+                $masive = implode(',',$masive);
+                $allUserInfo[$item]['browsed'] = $masive;
+                $id = $db->real_escape_string($allUserInfo[$item]['id']);
+                $sql = "update users set `browsed` = '$masive' ";
+                $result = $db->query($sql);
+            }
+        }
+        
+        $emptyUser = [];
+        
+        foreach($allUserInfo as $index => $item){
+            if($countOfDocument > count(explode(',',$item['browsed']))){
+                array_push($emptyUser , $index);
+            }
+        }
+        
+        if(count($emptyUser) != 0){
+            foreach ($emptyUser as $item){
+                $diferent = $countOfDocument - count(explode(',',$item['browsed']));
+                $id = $db->real_escape_string($item['id']);
+                $masive = explode(',',$item['browsed']) ;
+                
+                for($i=0 ; $i<$diferent ; $i++){
+                    array_push($masive , '0');
+                }
+                $masive = implode(',',$masive);
+                $sql = "update users set `browsed` = '$masive' where `id` = '$id' ";
+                $result = $db->query($sql);
+            }
+        }
+        
+        return true;
+    }
+    #return the count of all document
+    public static function getCountOfAllDocument(){
+        $db = Db::getConnection();
+        
+        $sql = 'select count(id) as count from docs';
+        $result = $db->query($sql);
+        
+        return $result->fetch_assoc()['count'];
     }
 }
 
