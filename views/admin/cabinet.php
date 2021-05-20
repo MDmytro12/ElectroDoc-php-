@@ -3,21 +3,25 @@
     <!-- document information -->
     <section>
         <div class="container">
-            <div class="block-doc">
-                <div class="doc-img">
-                    <iframe src='/tamplate/img/doc.png' frameborder="0">
-                    </iframe>
+            <?php foreach($documentInfo as $item):?>
+                <div>
+                    <div class="block-doc">
+                        <div class="doc-img">
+                            <iframe src='<?php echo Document::getImage($item['id']);?>' frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="doc-info">
+                            <div class="list-title">Інформація про документ:</div>
+                            <ul>
+                                <li class="list-item"><?php echo $item['content']; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block-sup-doc">
+                        <div class="under-doc">Додано :  <span><?php echo Document::getCorrectDate($item['date_publish'])?></span> </div>
+                    </div>
                 </div>
-                <div class="doc-info">
-                    <div class="list-title">Інформація про документ:</div>
-                    <ul>
-                        <li class="list-item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quia libero saepe, nulla aut, nam ab suscipit placeat recusandae voluptatibus rem officiis consequatur laudantium doloremque ea earum facilis itaque explicabo.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="block-sup-doc">
-                <div class="under-doc">Додано :  <span>4  квітня 2021 року</span> </div>
-            </div>
+            <?php endforeach;?>
         </div>
     </section>
     <!-- document information -->
@@ -26,14 +30,16 @@
     <section>
         <div class="container"> 
             <div class="ann-wrapper">
-                <div class="ann">
-                    <div class="ann-title">РЕЗОЛЮЦІЯ</div>
-                    <div class="ann-content">інормація ;</div>
-                    <div class="info-ann">
-                        <div class="ann-author">Автор : <span>Medvedv Dmytro</span></div>
-                        <div class="ann-date">Дата : <span> 21.04.2021</span></div>
+                <?php foreach($announceInfo as $item):?>
+                    <div class="ann">
+                        <div class="ann-title">ОГОЛОШЕННЯ</div>
+                        <div class="ann-content"><?php echo $item['content'];?></div>
+                        <div class="info-ann">
+                            <div class="ann-author">Автор :<span style='letter-spacing: .25em;'><?php echo $item['author'];?></span></div>
+                            <div class="ann-date">Дата :<span style='letter-spacing: .25em;'><?php echo Document::getCorrectDate($item['date_publish']); ?></span></div>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
     </section>

@@ -3,7 +3,7 @@
 class UserController{
     public function actionCabinet(){
         if(User::checkLogging()){
-            $_SESSION['user_btn'] = 'doc' ;
+            $doc_ann['user_btn'] = 'doc' ;
             
             Document::checkCorrectBrowsedMassive();
             
@@ -24,15 +24,13 @@ class UserController{
     
     public function actionAddAnnounce(){
         if(User::checkLogging()){
-            $_SESSION['user_btn'] = 'ann';
+            $doc_ann = 'ann';
             $send = false ;
             $noUserName = false;
             
             if(isset($_POST['name']) and !empty($_POST['name']) and !empty($_POST['content'])){
                 $author = $_POST['name'];
                 $content = $_POST['content'];
-                
-                
                 
                 $resultOfCheck = User::checkUserName($author);
                 print($resultOfCheck);
