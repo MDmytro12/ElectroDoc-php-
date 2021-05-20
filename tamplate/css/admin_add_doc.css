@@ -75,45 +75,49 @@ header {
   border: 1px solid #0E5B74;
   font-weight: 600;
 }
-
-.new-doc {
-  width: 100%;
-  padding-bottom: 25px;
+.btn-download{
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 40px; 
+    position:relative;
 }
-.new-doc .btn-download {
-  padding-bottom: 40px;
-  position: relative;
+.input-file{
+    display: flex;
 }
-.new-doc .btn-download input[name=btn-img] {
-  width: 100%;
-  width: 100%;
-  background-color: #0E5B74;
-  border: none;
-  border-radius: 30px;
-  text-align: center;
-  font-size: 48px;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  color: #C0CDD2;
-  padding-top: 22px;
-  padding-bottom: 22px;
-  -webkit-transition: letter-spacing linear 0.3s;
-  transition: letter-spacing linear 0.3s;
-  font-size: 48px;
+input[name=btn-img]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    
+    position: absolute;
+    z-index: -1;
 }
-.new-doc .btn-download input[name=btn-img]:hover {
-  letter-spacing: 0.45em;
+input[name=btn-img] + label{
+    width: 100%;
+    background-color: #0E5B74;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: #C0CDD2;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: letter-spacing linear 0.3s;
+    transition: letter-spacing linear 0.3s;
+    font-size: 48px;
+    
 }
-.new-doc .btn-download input[name=btn-img]:active {
-  border: 2px solid #0E5B74;
-  color: #0E5B74;
-  background-color: #C0CDD2;
+input[name=btn-img] + label:hover{
+    letter-spacing: 0.42em;
 }
-.new-doc .btn-download .arrow {
-  position: absolute;
-  top: 20%;
-  right: 87%;
-  z-index: 1;
+.arrow{
+    position: absolute;
+    top: 20%;
+    right: 87%;
+    z-index: 1;
 }
 .new-doc .img {
   border: 2px solid #0E5B74;
@@ -121,6 +125,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 15px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -169,9 +174,6 @@ header {
 }
 .new-doc .add-per input[type=checkbox]:checked + label:before {
   color: #C0CDD2;
-}
-.new-doc form {
-  padding-top: 25px;
 }
 .new-doc form .form-title {
   text-align: left;
@@ -250,6 +252,7 @@ header {
   color: #C0CDD2;
   padding-top: 22px;
   padding-bottom: 22px;
+  margin-bottom: 30px;
   -webkit-transition: letter-spacing linear 0.3s;
   transition: letter-spacing linear 0.3s;
 }

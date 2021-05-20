@@ -4,13 +4,16 @@
     <section>
         <div class="container">
             <div class="new-doc">
-                <div class="btn-download">
-                    <input type="submit" name='btn-img' value='Завантажте документ'>
+                <form method='post' class="btn-download" enctype="multipart/from-data">
+                    <div class='input-file'>
+                       <input type="file" name='btn-img' id='down_img' >
+                       <label for='down_img'>Завантажте документ</label>
+                    </div>
                     <img src="/tamplate/img/arrow.svg" class='arrow'>
-                </div>
+                </form>
                 <div class="img">
                     <div class="img1">
-                        <img src="/tamplate/img/dow_img.svg" class='img-img'>
+                        <img src="/uploades/img/docs/doc.png" class='img-img'>
                     </div>
                 </div>                
                 <div class="add-per">
@@ -38,5 +41,11 @@
         </div>
     </section>
     <!-- process of adding of new document -->
+    
+    <!-- java script code -->
+    <script src="/tamplate/js/jquery-3.6.0.min.js"></script>
+    <script src='/tamplate/js/down_img.js'></script>
+    <!-- java script code -->
+
 
 <?php require_once(ROOT.'/views/layouts/footer.php');?>
