@@ -23,4 +23,15 @@ class Announce{
         
         $db->close();
     }
+    #return count of all announce
+    public static function getCountOfAllAnnounce(){
+        $db = Db::getConnection();
+        
+        $sql = 'select count(id) as count from announces';
+        
+        $result = $db->query($sql);
+        $db->close();
+        
+        return $result->fetch_assoc()['count'];
+    }
 }

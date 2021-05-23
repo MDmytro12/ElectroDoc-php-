@@ -252,7 +252,7 @@ input[name=btn-img] + label:hover{
   color: #C0CDD2;
   padding-top: 22px;
   padding-bottom: 22px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   -webkit-transition: letter-spacing linear 0.3s;
   transition: letter-spacing linear 0.3s;
 }
@@ -263,4 +263,50 @@ input[name=btn-img] + label:hover{
   border: 2px solid #0E5B74;
   color: #0E5B74;
   background-color: #C0CDD2;
+}
+.empty{
+    padding-top: 10px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #EB042A;
+    text-align: center;
+    display: none ;
+}
+.empty.active{
+    display: block;
+}
+.img1{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.img-img{
+    margin-bottom: 25px;
+    border-radius: 20px;
+}
+.success{
+    padding-top: 10px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #149F5C;
+    text-align: center;
+    display: none ;
+}
+.success.active{
+    display: block;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+.delete{
+    position: absolute;
+    font-size: 134px;
+    color: red;
+    font-weight: 600;
+
+    cursor: pointer;
 }

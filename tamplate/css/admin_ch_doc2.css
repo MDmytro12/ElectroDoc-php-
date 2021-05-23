@@ -183,3 +183,11 @@
   color: #0E5B74;
   background-color: #C0CDD2;
 }
+.ch-doc .edit-doc .title{
+    font-size: 40px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}

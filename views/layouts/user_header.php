@@ -38,7 +38,7 @@
         <div class="container">
             <div class="user-btn">
                 <a href="cab" class='btn-doc  <?php if($doc_ann == 'doc'){ echo 'active'; }?>'>Документи</a>
-                <a href="add_ann" class='btn-ann  <?php if($doc_ann['user_btn'] == 'ann' ){ echo 'active'; }?>'>Додати оголошення</a>
+                <a href="add_ann" class='btn-ann  <?php if($doc_ann == 'ann' ){ echo 'active'; }?>'>Додати оголошення</a>
             </div>
             
         </div>

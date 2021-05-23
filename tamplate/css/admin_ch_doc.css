@@ -42,7 +42,7 @@ header {
 
 .doc-table {
   position: relative;
-  padding-bottom: 90px;
+  padding-bottom: 120px;
 }
 .doc-table:after {
   -webkit-box-sizing: content-box;
@@ -54,7 +54,7 @@ header {
   background-color: #C0CDD2;
   border-right: 3px solid #0E5B74;
   border-left: 3px solid #0E5B74;
-  right: 19.55%;
+  right: 19.5%;
 }
 .doc-table .head-table {
   display: -webkit-box;
@@ -126,4 +126,9 @@ header {
 }
 .info-table .count-doc {
   margin-bottom: 50px;
+}
+.name-doc , .edit , .date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

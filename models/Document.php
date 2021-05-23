@@ -169,5 +169,32 @@ class Document{
         
         return $result->fetch_assoc()['count'];
     }
+    #add new record to a database
+    public static function addNewDocument($countImg , $content , $author , $whosee ){
+        #counting obrowsed 
+        
+        $masiveBrowsed = array();
+        $countOfUser = User::getCountOfAllUsers();
+        
+        for($i = 0 ; $i < $countOfUser ; $i++ ){
+            array_push($masiveBrowsed , '0');
+        }
+        
+        $masiveBrowsed = json_encode($masiveBrowsed);
+        
+        #adding of record to database
+        
+        $db = Db::getConnection();
+        
+        $countImg = $db->real_escape_string(trim($countImg));
+        $author = $db->real_escape_string($author);
+        $content = $db->real_escape_string(trim($content));
+        $masiveBrowsed = $db->real_escape_string($masiveBrowsed);
+        $whosee = $db->real_escape_string($whosee);
+        
+        $sql = "insert into docs values(default , '$author' , '$content' , '$countImg' , default , '$masiveBrowsed' ,  '$whosee' );";
+        
+        $db->query($sql);   
+    }
 }
 

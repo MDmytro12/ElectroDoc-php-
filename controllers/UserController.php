@@ -3,7 +3,7 @@
 class UserController{
     public function actionCabinet(){
         if(User::checkLogging()){
-            $doc_ann['user_btn'] = 'doc' ;
+            $doc_ann = 'doc' ;
             
             Document::checkCorrectBrowsedMassive();
             

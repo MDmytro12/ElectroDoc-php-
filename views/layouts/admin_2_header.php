@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/tamplate/css/user_show_dos.css">
     <link rel="stylesheet" href="/tamplate/css/admin_show_doc.css">
     <link rel="stylesheet" href="/tamplate/css/admin_add_doc.css">
+    <link rel="stylesheet" href="/tamplate/css/admin_ch_doc.css"/>
+    <link rel="stylesheet" href="/tamplate/css/admin_ch_doc2.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ElectroDoc!</title>
 </head>
@@ -15,7 +17,7 @@
             <div class="icon">
                 <img src="/tamplate/img/icon.svg" alt="Icon!">
                 <a href="cab" class='link-cab' >Мій кабінет</a>
-                <a href="addminis" class='link-admin  active'>Адміністрування</a>
+                <a href="adminis" class='link-admin  active'>Адміністрування</a>
                 <a href="log" class='link-logout' >Вихід</a>
             </div>
         </div>
@@ -39,9 +41,9 @@
     <section>
         <div class="container">
             <div class="admin-link">
-                <a href="adminis" class='link-add-doc active'>Оприлюднити документ</a>
-                <a href="ch_doc" class='link-ch-doc'>Змінити існуючі документи</a>
-                <a href="del_doc" class='link-del-doc'>Видалити документ зі списку </a>
+                <a href="adminis" class='link-add-doc <?php if($btn_user == 'add'){ echo 'active'; } ?>'>Оприлюднити документ</a>
+                <a href="ch_doc" class='link-ch-doc <?php if($btn_user == 'ch'){ echo 'active'; } ?>'>Змінити існуючі документи</a>
+                <a href="del_doc" class='link-del-doc <?php if($btn_user == 'del'){ echo 'active'; } ?>'>Видалити документ зі списку </a>
             </div>
         </div>
     </section>

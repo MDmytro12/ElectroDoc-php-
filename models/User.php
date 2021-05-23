@@ -131,4 +131,15 @@ class User{
         
         return false;
     }
+    #return all users identefikator
+    public static function getAllUserIdentef(){
+        $db =Db::getConnection();
+        
+        $sql = 'select id , all_name from users ';
+        
+        $result = $db->query($sql);
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+        
+        return $result;
+    }
 }

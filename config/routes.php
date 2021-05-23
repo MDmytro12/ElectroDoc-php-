@@ -7,6 +7,9 @@ return array(
     'admin/ch_doc' => 'admin/changeDocument',
     'admin/ch_doc2' => 'admin/changeDocument2',
     'admin/del_doc' => 'admin/deleteDocument',
+    'admin/down' => 'admin/upload',
+    'admin/ch_user' => 'admin/checkedUsers',
+    'admin/del_img' => 'admin/deleteImage',
 
     'user/cab' => 'user/cabinet',
     'user/log' => 'user/logout',
