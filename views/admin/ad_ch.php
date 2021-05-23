@@ -12,7 +12,7 @@
                 <div class="item-table">
                     <div class="date"><?php echo Document::getCorrectDate($docs['date_publish']);?></div>
                     <div class="name-doc"><?php echo $docs['author'];?></div>
-                    <a href="ch_doc2" id='<?php echo $docs['id'];?>' class="edit">Редагувати</a>
+                    <a href='ch_doc2' id='<?php echo $docs['id'];?>' class="edit">Редагувати</a>
                 </div>
             <?php endforeach;?>
         </div>
@@ -30,6 +30,9 @@
     </div>
 </section>
 <!-- table with documents -->
+
+<script src='/tamplate/js/jquery-3.6.0.min.js'></script>
+<script src="/tamplate/js/ch_doc_2.js"></script>
 
 <?php require_once(ROOT.'/views/layouts/footer.php'); ?>
 

@@ -4,9 +4,7 @@
   letter-spacing: 0.32em;
   text-align: center;
 }
-.ch-doc form .title {
-  height: 100%;
-}
+
 .ch-doc form .input-field {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,4 +188,21 @@
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+.error{
+    padding-top: 10px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #DD5246;
+    text-align: center;
+    display: none;
+}
+.error.active{
+    display: block;
+}
+.ch-doc input[type=submit]{
+    margin-bottom: 0;
+}
+.ch-doc form {
+    margin-bottom: 0;
 }

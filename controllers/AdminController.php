@@ -153,11 +153,46 @@ class AdminController{
         
         if(User::checkLogging()){
             $btn_user = 'ch';
+            $is_changed = false;
+            $error = false;
+            
+            $documentInfo = Document::getInfoById($_SESSION['ch_id']);
+            
+            if( isset($_SESSION['ch_id']) and !empty($_SESSION['ch_id'])){
+                if(isset($_POST['doc-submit']) ){
+                    $error = 'name';
+                    $allUsersNames = User::getAllNamesUsers();
+                   
+                    if(in_array($_POST['author'], $allUsersNames)){
+                        $error = false;
+                    }
+                    
+                    
+                    
+                    if($_POST['doc-content'] == ''){
+                        $error = 'content';
+                    }
+
+                    if($error == false){
+                        Document::changeDocumentById($_SESSION['ch_id'], $_POST['doc-date'], $_POST['author'], $_POST['doc-content']);
+                        $is_changed = true;
+                    }
+            }}
+            
+            echo Document::dateToDataBase('1травня 2021 року');
             
             require_once(ROOT.'/views/admin/ad_ch_2.php');
-        }else{
+            }else{
             header('Location: /');
         }
+    }
+    
+    public function actionChangeDocument3(){
+        if(isset($_SESSION['success'])){
+               $_SESSION['success'] = false;
+        }
+      
+        $_SESSION['ch_id'] = $_POST['idDoc'];
     }
     
     public function actionDeleteDocument(){

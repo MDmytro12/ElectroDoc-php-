@@ -196,5 +196,81 @@ class Document{
         
         $db->query($sql);   
     }
+    #return information about one document by id
+    public static function getInfoById($id){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string($id);
+        
+        $sql = "select * from docs where `id` = $id ";
+        
+        $result = $db->query($sql);
+        
+        return $result->fetch_assoc();
+    }
+    #this method change document by id
+    public static function changeDocumentById($id , $date , $author , $content ){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string($id);
+        $date = $db->real_escape_string($date);
+        $author = $db->real_escape_string($author);
+        $content = $db->real_escape_string($content);
+        
+        $sql = "update docs set `date_publish` = '$date' , `author` = '$author' , `content` = '$content' where `id` = $id  ";
+        
+        $db->query($sql);
+    }
+    #transform data in form for database
+    public static function dateToDataBase($date){
+        $date = explode(' ' , $date);
+        $day = $date[0];
+        $month = $date[1];
+        $year = $date[2];
+       
+        switch($month){
+            case 'січня':
+                $month = 1;
+                break;
+            case 'лютого':
+                $month = 2;
+                break;
+            case 'березня':
+                $month = 3;
+                break;
+            case 'квітня':
+                $month = 4;
+                break;
+            case 'травня':
+                $month = 5;
+                break;
+            case 'червеня':
+                $month = 6;
+                break;
+            case 'липеня':
+                $month = 7;
+                break;
+            case 'серпеня':
+                $month = 8;
+                break;
+            case 'вересня':
+                $month = 9;
+                break;
+            case 'жовтня':
+                $month = 10;
+                break;
+            case 'листопада':
+                $month = 11;
+                break;
+            case 'грудня':
+                $month = 12;
+                break;
+            default:
+                $month = 1;
+                break;
+        }
+        
+        return $year.'-'.$month.'-'.$day;
+    }
 }
 
