@@ -272,5 +272,15 @@ class Document{
         
         return $year.'-'.$month.'-'.$day;
     }
+    #delete item of document from dataBase
+    public static function deleteDocumentById($id){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string(trim($id));
+        $sql = "delete from docs where `id` = $id ";
+        
+        $db->query($sql);
+        $db->close();
+    }
 }
 

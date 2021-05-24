@@ -11,7 +11,7 @@
                     </div>
                     <div class="input-field">
                         <div class="title">Дата публікації : </div>
-                        <input type="text" placeholder="<?php echo Document::getCorrectDate($documentInfo['date_publish']);?>" name="doc-date" class='input' value="<?php echo Document::getCorrectDate($documentInfo['date_publish']);?>">
+                        <input type="date" style='padding-left: 60px; padding-right: 60px;' placeholder="<?php echo Document::getCorrectDate($documentInfo['date_publish']);?>" name="doc-date" class='input' value="<?php echo Document::getCorrectDate($documentInfo['date_publish']);?>">
                     </div>
                     <div class="input-field">   
                         <div class="title">Автор документу : </div>
@@ -22,7 +22,6 @@
                     <input type="submit" name='doc-submit' value="Змінити документ">
                 </form>
                 <div class="error <?php if($error){ echo 'active'; } ?>">Дані було введено не коректно!</div>
-                <div class="success <?php if($is_changed){ echo 'active';} ?>">Документ було успішно змінено!</div>
             </div>
         </div>
     </div>

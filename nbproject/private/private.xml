@@ -5,11 +5,11 @@
         <group>
             <file>file:/C:/wamp64/www/models/User.php</file>
             <file>file:/C:/wamp64/www/config/routes.php</file>
+            <file>file:/C:/wamp64/www/tamplate/js/add_del.js</file>
+            <file>file:/C:/wamp64/www/models/Announce.php</file>
             <file>file:/C:/wamp64/www/models/Document.php</file>
-            <file>file:/C:/wamp64/www/tamplate/js/down_img.js</file>
+            <file>file:/C:/wamp64/www/views/admin/ad_del.php</file>
             <file>file:/C:/wamp64/www/controllers/AdminController.php</file>
-            <file>file:/C:/wamp64/www/models/Admin.php</file>
-            <file>file:/C:/wamp64/www/views/admin/ad_add.php</file>
         </group>
     </open-files>
 </project-private>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/tamplate/css/admin_add_doc.css">
     <link rel="stylesheet" href="/tamplate/css/admin_ch_doc.css"/>
     <link rel="stylesheet" href="/tamplate/css/admin_ch_doc2.css"/>
+    <link rel="stylesheet" href="/tamplate/css/admin_del_doc.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ElectroDoc!</title>
 </head>
@@ -15,7 +16,7 @@
     <header>
         <div class="container">
             <div class="icon">
-                <img src="/tamplate/img/icon.svg" alt="Icon!">
+                <a href='cab'><img src="/tamplate/img/icon.svg" alt="Icon!"></a>
                 <a href="cab" class='link-cab' >Мій кабінет</a>
                 <a href="adminis" class='link-admin  active'>Адміністрування</a>
                 <a href="log" class='link-logout' >Вихід</a>

@@ -48,8 +48,6 @@ class AdminController{
                         $checkedUsers = 'no';
                     }
                     
-                    
-                    
                     if( ($_POST['content']) != ''  ){
                         if(isset($_SESSION['imageCount'])){
                             $_SESSION['imageCount'] = 0;
@@ -70,6 +68,7 @@ class AdminController{
 
                         $content = $_POST['content'];
                         
+                        User::setBrowsedAddDocument();
                         Document::addNewDocument(count($allImages), $content, 'chief_of_English_department' , $checkedUsers);
                         
                         $_SESSION['success']=true;
@@ -153,10 +152,8 @@ class AdminController{
         
         if(User::checkLogging()){
             $btn_user = 'ch';
-            $is_changed = false;
+            $_SESSION['is_changed'] = false;
             $error = false;
-            
-            $documentInfo = Document::getInfoById($_SESSION['ch_id']);
             
             if( isset($_SESSION['ch_id']) and !empty($_SESSION['ch_id'])){
                 if(isset($_POST['doc-submit']) ){
@@ -167,19 +164,21 @@ class AdminController{
                         $error = false;
                     }
                     
-                    
-                    
                     if($_POST['doc-content'] == ''){
                         $error = 'content';
+                    }
+                    
+                    if($_POST['doc-date'] == ''){
+                        $error = 'date' ;
                     }
 
                     if($error == false){
                         Document::changeDocumentById($_SESSION['ch_id'], $_POST['doc-date'], $_POST['author'], $_POST['doc-content']);
-                        $is_changed = true;
+                        $_SESSION['is_changed'] = true;
+                        header('Location: /admin/ch_doc');
                     }
             }}
-            
-            echo Document::dateToDataBase('1травня 2021 року');
+            $documentInfo = Document::getInfoById($_SESSION['ch_id']);
             
             require_once(ROOT.'/views/admin/ad_ch_2.php');
             }else{
@@ -199,7 +198,35 @@ class AdminController{
         if(isset($_SESSION['success'])){
                $_SESSION['success'] = false;
            }
-        echo 'Delete document!';
+        if(User::checkLogging()){
+            $btn_user = 'del';
+            $deleteAnn = false ;
+            $deleteDoc = false ;
+            
+            
+            
+            if(isset($_SESSION['ad'])){
+                Announce::deleteAnnounceById($_SESSION['ad']);
+                unset($_SESSION['ad']);
+                $deleteAnn = true ; 
+            }
+            
+            if(isset($_SESSION['dd'])){
+                User::setBrowsedDeleteDocument($_SESSION['dd']);
+                Document::deleteDocumentById($_SESSION['dd']);
+                unset($_SESSION['dd']);
+                $deleteDoc = true ;
+            }
+            
+            
+            
+            $allDocumentInfo = Document::getAllDocumentInfo();
+            $allAnnounceInfo = Announce::getAllAnnounceInfo();
+            
+            require_once(ROOT.'/views/admin/ad_del.php');
+        }else{
+            header('Location: /');
+        }
     }
     
     public function actionUpload(){
@@ -283,5 +310,15 @@ class AdminController{
         }
     }
     
+    public function actionDeleteDocument1(){
+        if(isset($_POST['docDel']) and !empty($_POST['docDel'])){
+            $_SESSION['dd'] = $_POST['docDel'];
+        }
+        
+        if(isset($_POST['annDel']) and !empty($_POST['annDel'])){
+            $_SESSION['ad'] = $_POST['annDel'];
+        }
+        
+    }
 }
 

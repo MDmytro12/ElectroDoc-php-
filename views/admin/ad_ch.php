@@ -4,6 +4,7 @@
 <section>
     <div class="container">
         <div class="doc-table">
+            <div style='margin-bottom: 40px;' class="success <?php if($_SESSION['is_changed']){ echo 'active'; $_SESSION['is_changed'] = false   ;} ?>">Документ було успішно змінено!</div>
             <div class="head-table">
                 <div class="head-item1">Дата</div>
                 <div class="head-item2">Автор документу</div>

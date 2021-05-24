@@ -3,6 +3,9 @@
     <!-- document information -->
     <section>
         <div class="container">
+            <?php if(count($documentInfo) == 0  and count($announceInfo) == 0 ): ?>
+                <div style='padding-bottom: 20px;color: #0E5B74; width: 100%; text-align:center; font-size: 40px; font-weight: 600;'>Документи та оголошення поки що не було опубліковано!</div>
+            <?php endif; ?>
             <?php foreach($documentInfo as $item):?>
                 <div>
                     <div class="block-doc">
@@ -31,7 +34,7 @@
         <div class="container"> 
             <div class="ann-wrapper">
                 <?php foreach($announceInfo as $item):?>
-                    <div class="ann">
+                    <div class="ann" style="box-sizing: border-box;">
                         <div class="ann-title">ОГОЛОШЕННЯ</div>
                         <div class="ann-content"><?php echo $item['content'];?></div>
                         <div class="info-ann">

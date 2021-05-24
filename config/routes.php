@@ -11,7 +11,8 @@ return array(
     'admin/down' => 'admin/upload',
     'admin/ch_user' => 'admin/checkedUsers',
     'admin/del_img' => 'admin/deleteImage',
-
+    'admin/del_doc1' => 'admin/deleteDocument1',
+    
     'user/cab' => 'user/cabinet',
     'user/log' => 'user/logout',
     'user/add_ann' => 'user/addAnnounce',

@@ -142,4 +142,71 @@ class User{
         
         return $result;
     }
+    #after deleting of document set correct type of browsed
+    public static function setBrowsedDeleteDocument($id){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string(trim($id));
+        
+        #get users browsed
+        $sql = 'select id , browsed from users';
+        
+        $result = $db->query($sql);
+        $userBrowsed = $result->fetch_all(MYSQLI_ASSOC);
+        
+        #get document browsed
+        
+        $sql = 'select id , browsed from docs';
+        
+        $result = $db->query($sql);
+        $documentBrowsed = $result->fetch_all(MYSQLI_ASSOC);
+        
+        #transofr json format to array
+        $countOfDeleteDocument = 0 ;
+        
+        for($i = 0 ; $i < count($userBrowsed) ; $i++){
+            $userBrowsed[$i]['browsed'] = explode(',' , $userBrowsed[$i]['browsed']);
+        }
+        
+        for($i = 0 ; $i < count($documentBrowsed) ; $i++){
+            $documentBrowsed[$i]['browsed'] = json_decode($documentBrowsed[$i]['browsed']);
+            if($documentBrowsed[$i]['id'] == $id ){
+                $countOfDeleteDocument = $i;
+            }
+        }
+        
+        #removing zeros
+        
+        for($i = 0; $i < count($userBrowsed) ; $i++ ){
+            unset($userBrowsed[$i]['browsed'][$countOfDeleteDocument]);
+        }
+        
+        foreach($userBrowsed as $item){
+            $id = $db->real_escape_string($item['id']);
+            $browsed = $db->real_escape_string(implode(',',$item['browsed']));
+            $sql = "update users set `browsed` = '$browsed' where `id` = $id ";
+            $db->query($sql);
+        }
+         
+    }
+    #add item of browsed to users 
+    public static function setBrowsedAddDocument(){
+        $db = Db::getConnection();
+        
+        #get users browsed
+        $sql = 'select id , browsed from users';
+        
+        $result = $db->query($sql);
+        $userBrowsed = $result->fetch_all(MYSQLI_ASSOC);
+        
+        for($i=0 ; $i < count($userBrowsed) ; $i++){
+            $userBrowsed[$i]['browsed'] = explode(',' , $userBrowsed[$i]['browsed']);
+            array_push($userBrowsed[$i]['browsed'] , 0);
+            $newValue = implode(',' ,$userBrowsed[$i]['browsed'] );
+            $newValue = $db->real_escape_string($newValue);
+            $id = $db->real_escape_string($userBrowsed[$i]['id']);
+            $sql = "update users set `browsed` = '$newValue' where `id` = $id ";
+            $db->query($sql);
+        }
+    }
 }

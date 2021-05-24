@@ -34,4 +34,14 @@ class Announce{
         
         return $result->fetch_assoc()['count'];
     }
+    #deleting announce from database
+    public static function deleteAnnounceById($id){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string(trim($id));
+        $sql = "delete from announces where `id` = $id ";
+        
+        $db->query($sql);
+        $db->close();
+    }
 }
