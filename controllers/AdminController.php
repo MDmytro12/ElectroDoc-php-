@@ -65,29 +65,26 @@ class AdminController{
                         if(isset($_SESSION['imageCount'])){
                             $_SESSION['imageCount'] = 0;
                         }
+                        #adding document to database
+
+                        $content = $_POST['content'];
+                        
+                        User::setBrowsedAddDocument($checkedUsers);
+                        Document::addNewDocument(count($allImages), $content, 'chief_of_English_department' , $checkedUsers);
                         #removing and deleting images 
-
-                        $countOfDocument = Document::getCountOfAllDocument();
-
+                        
+                        $newId = Document::getMaxId();
+                        
                         foreach($allImages as $index => $image){
-                        copy($_SERVER['DOCUMENT_ROOT']."/uploades/img/tmp/$image" , $_SERVER['DOCUMENT_ROOT']."/uploades/img/docs/doc_{$countOfDocument}_{$index}.png");
+                        copy($_SERVER['DOCUMENT_ROOT']."/uploades/img/tmp/$image" , $_SERVER['DOCUMENT_ROOT']."/uploades/img/docs/doc_{$newId}_{$index}.png");
                         }
 
                         foreach($allImages as $image){
                             unlink($_SERVER['DOCUMENT_ROOT']."/uploades/img/tmp/$image");
                         }
-
-                        #adding document to database
-
-                        $content = $_POST['content'];
-                        
-                        print_r(User::setBrowsedAddDocument($checkedUsers));
-                        Document::addNewDocument(count($allImages), $content, 'chief_of_English_department' , $checkedUsers);
-                        
-                        
                         
                         $_SESSION['success']=true;
-                      header('Location: /admin/adminis');
+                        header('Location: /admin/adminis');
                 }else{
                     $_SESSION['empty_field']=true;
                     foreach($allImages as $image){
@@ -219,8 +216,6 @@ class AdminController{
             $deleteAnn = false ;
             $deleteDoc = false ;
             
-            
-            
             if(isset($_SESSION['ad'])){
                 Announce::deleteAnnounceById($_SESSION['ad']);
                 unset($_SESSION['ad']);
@@ -230,11 +225,10 @@ class AdminController{
             if(isset($_SESSION['dd'])){
                 User::setBrowsedDeleteDocument($_SESSION['dd']);
                 Document::deleteDocumentById($_SESSION['dd']);
+                Document::deleteNoUsefulImages($_SESSION['dd']);
                 unset($_SESSION['dd']);
                 $deleteDoc = true ;
             }
-            
-            
             
             $allDocumentInfo = Document::getAllDocumentInfo();
             $allAnnounceInfo = Announce::getAllAnnounceInfo();
@@ -346,8 +340,17 @@ class AdminController{
             
             $db = Db::getConnection();
             
+            $whosee = [];
+            
+            foreach($allDocumentInfo as $doc){
+                $masive = json_decode($doc['who_see']);
+                foreach($masive as $item){
+                    array_push($whosee , $item);
+                }
+            }
+            
             foreach($allUserInfo as $user){
-                if( (int)explode(',' , $user['browsed'])[$documentCount] == 0 ){
+                if( (int)explode(',' , $user['browsed'])[$documentCount] == 0 and in_array((int)$user['id'], $whosee) ){
                     $sql = "update users set new = new - 1 where id = {$user['id']} ";
                     $db->query($sql);
                     echo $user['identef'];

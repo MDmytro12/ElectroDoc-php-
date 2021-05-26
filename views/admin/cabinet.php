@@ -9,9 +9,45 @@
             <?php foreach($documentInfo as $item):?>
                 <div>
                     <div class="block-doc">
-                        <div class="doc-img">
-                            <iframe class='<?php if((int)json_decode($item['browsed'])[$userCount] == 0 ){ echo 'iframe';} ?>' src='<?php echo Document::getImage($item['id']);?>' id='<?php echo $item['id']; ?>' frameborder="0">
-                            </iframe>
+                        <div class="doc-img" id='<?php echo $item['id']; ?>'>
+                            <?php if((int)$item['img_path'] > 1):?>
+                                <div class='arrow-left arrow-btn'>&#8249</div>
+                                <div class='arrow-right arrow-btn'>&#8250</div>
+                            <?php endif;?>
+                            <?php if((int)$item['img_path'] <= 1): ?>
+                                <div class='iff <?php if((int)json_decode($item['browsed'])[$userCount] == 0 ){ echo 'iframe';} ?>'  id='<?php echo $item['id']; ?>'>
+                                    <img class='image-items active' id='0' src='<?php print_r(Document::getImage($item['id'])); ?>' />
+                                </div>
+                            <?php endif;?>
+                            <?php if((int)$item['img_path'] > 1 ):?>
+                                <div  class='iff <?php if((int)json_decode($item['browsed'])[$userCount] == 0 ){ echo 'iframe';} ?>' id='<?php echo $item['id']; ?>'>
+                                    <?php $firstClass = true ;?>
+                                    <?php $count = 0 ; ?>
+                                    <?php foreach(Document::getImage($item['id']) as $image):?>
+                                        <?php if($count == 0):?>
+                                            <img class='image-items active' id='<?php echo $count; ?>' src='<?php echo $image;?>' />
+                                        <?php endif; ?>
+                                        <?php if($count > 0):?>
+                                            <img class='image-items' id='<?php echo $count; ?>' src='<?php echo $image;?>' />
+                                        <?php endif; ?>
+                                        <?php $count = $count + 1 ; ?>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif;?>
+                            <?php if((int)$item['img_path'] > 1 ):?>
+                                <div class='img-count'>
+                                    <?php $count = 0 ; ?>
+                                    <?php for($i = 0 ; $i < (int)$item['img_path'] ; $i++ ): ?>
+                                        <?php if($i == 0 ):?>
+                                            <div class='img-item active' id='<?php echo $count; ?>'></div>
+                                        <?php endif; ?>
+                                        <?php if($i > 0): ?>
+                                            <div class='img-item' id='<?php echo $count; ?>'></div>
+                                        <?php endif; ?> 
+                                        <?php $count = $count + 1; ?>
+                                    <?php endfor;?>
+                                </div>
+                            <?php endif;?>
                             <div class='br <?php if((int)json_decode($item['browsed'])[$userCount] == 0 ){ echo 'active';} ?>'>Не переглянуто</div>
                             <div class='br1 <?php if((int)json_decode($item['browsed'])[$userCount] == 1 ){ echo 'active';} ?>'>Переглянуто</div>
                         </div>
@@ -52,5 +88,6 @@
     
     <script src='/tamplate/js/jquery-3.6.0.min.js'></script>
     <script src='/tamplate/js/admin_cab.js'></script>
+    <script src='/tamplate/js/slider.js'></script>
 
 <?php require_once(ROOT.'/views/layouts/footer.php');?>

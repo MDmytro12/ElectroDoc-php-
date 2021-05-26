@@ -5,8 +5,6 @@ class UserController{
         if(User::checkLogging()){
             $doc_ann = 'doc' ;
             
-            Document::checkCorrectBrowsedMassive();
-            
             $userInfo = User::getAllUserInfo();
             $documentInfo = Document::getAllDocumentInfo();
             $announceInfo = Announce::getAllAnnounceInfo();
@@ -30,7 +28,7 @@ class UserController{
                     array_push($whosee , $item);
                 }
             }
-            
+
             require_once(ROOT.'/views/user/cabinet.php'); 
         }else{
             header('Location: /');

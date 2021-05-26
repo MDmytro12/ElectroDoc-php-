@@ -18,21 +18,39 @@ class Document{
         $db = Db::getConnection();
         
         $id  = $db->real_escape_string($id);
-        $sql = "select img_path from docs where id = $id ";
+        $sql = "select img_path , id from docs where id = $id ";
         
         $result = $db->query($sql);
-        $countOfImage = $result->fetch_assoc();
+        $result=$result->fetch_assoc();
         
+        $countOfImage =$result['img_path'];
+        $documentId = $result['id'];
+        $files = scandir($_SERVER['DOCUMENT_ROOT'].'/uploades/img/docs/');
+        array_shift($files);
+        array_shift($files);
         
-        $noPath = '/uploades/img/docs/doc.png';
-        
-        $yesPath = "/uploades/img/docs/doc_$id.png";
-        
-        if(file_exists($_SERVER['DOCUMENT_ROOT'].$yesPath)){
-            return $yesPath;
+        if($countOfImage == 0 ){
+            return '/uploades/img/docs/doc.png';
+        }elseif ($countOfImage == 1) {
+            foreach($files as $file){
+                if(preg_match("~_{$documentId}_0~" , $file)){
+                    return '/uploades/img/docs/'.$file;
+                }
+            }
+        }else{
+            $masiveOfImages = [];
+            
+            foreach($files as $file){
+                if(preg_match("~_{$documentId}_[0-9]{1,}~" , $file)){
+                    array_push($masiveOfImages , '/uploades/img/docs/'.$file);
+                }
+            }
+            
+            return $masiveOfImages;
         }
         
-        return $noPath;
+        return '/uploades/img/docs/doc.png';
+        
     }
     #return correct type of date
     public static function getCorrectDate($date){
@@ -292,6 +310,39 @@ class Document{
         $id = $db->real_escape_string($_SESSION['id']);
         
         $db->close()    ;
+    }
+    #return max id 
+    public static function getMaxId(){
+        $db= Db::getConnection();
+        
+        $sql = 'select max(id) as max from docs ';
+        $result = $db->query($sql);
+        
+        $db->close();
+        return $result->fetch_assoc()['max'];
+    }
+    #delete not needed images
+    public function deleteNotNeededImages(){
+        $allImages = scandir($_SERVER['DOCUMENT_ROOT'].'/uploades/img/tmp');
+        array_shift($allImages);
+        array_shift($allImages);
+        
+        foreach($allImages as $img){
+            unlink($img);
+        }
+    }
+    #delete images after deleting of document
+    public static function deleteNoUsefulImages($id){
+        $allImages = scandir($_SERVER['DOCUMENT_ROOT'].'/uploades/img/docs/');
+        array_shift($allImages);
+        array_shift($allImages);
+        
+        foreach($allImages as $image){
+            if(preg_match("~_{$id}_~", $image)){
+                unlink($_SERVER['DOCUMENT_ROOT'].'/uploades/img/docs/'.$image);
+            }
+        }
+       
     }
 }
 

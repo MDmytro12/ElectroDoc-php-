@@ -22,7 +22,8 @@ $(document).ready(function () {
                       $('.iframe').each(function (index) {
                           let id = $(this).attr('id');
                           ajaxRequest(id);
-                          $('#'+id+'').removeAttr('class');
+                          $('#'+id+' #'+id).removeClass('iframe');
+                          console.log($('#'+id+' #'+id).attr('class'));
                           return false;
                         });
                 }
@@ -45,11 +46,10 @@ function ajaxRequest(id , i){
         cache: false,
         contentType: false,
         success: function (res) {
-            
             if(res != 'false'){
-                console.log(res);
-                $('#'+res+' + .br').removeClass('active');
-                $('#'+res+'+ .br + .br1').addClass('active');
+                $('#'+res+' .br').removeClass('active');
+                $('#'+res+' .br1').addClass('active');
+                console.log($('#'+res+'  .br'));
                 let count = parseInt($('.count-mesage').text().slice(2));
                 count = count -1;
                 if(count == 0){
@@ -57,7 +57,6 @@ function ajaxRequest(id , i){
                 }else{
                     $('.count-mesage').html('+ '+count);
                 }
-                
             }
         }
     })
