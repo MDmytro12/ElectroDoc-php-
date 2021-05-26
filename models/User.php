@@ -190,7 +190,7 @@ class User{
          
     }
     #add item of browsed to users 
-    public static function setBrowsedAddDocument(){
+    public static function setBrowsedAddDocument($checked){
         $db = Db::getConnection();
         
         #get users browsed
@@ -200,13 +200,77 @@ class User{
         $userBrowsed = $result->fetch_all(MYSQLI_ASSOC);
         
         for($i=0 ; $i < count($userBrowsed) ; $i++){
-            $userBrowsed[$i]['browsed'] = explode(',' , $userBrowsed[$i]['browsed']);
-            array_push($userBrowsed[$i]['browsed'] , 0);
-            $newValue = implode(',' ,$userBrowsed[$i]['browsed'] );
+            if(Document::getCountOfAllDocument() != 0 ){
+                $userBrowsed[$i]['browsed'] = explode(',' , $userBrowsed[$i]['browsed']); #transforming
+            }else{
+                $userBrowsed[$i]['browsed'] = [];
+            }
+                
+            array_push($userBrowsed[$i]['browsed'] , 0); #adding
+            $newValue = implode(',' ,$userBrowsed[$i]['browsed'] ); 
             $newValue = $db->real_escape_string($newValue);
             $id = $db->real_escape_string($userBrowsed[$i]['id']);
-            $sql = "update users set `browsed` = '$newValue' where `id` = $id ";
+            $sql = "update users set `browsed` = '$newValue'  where `id` = $id ";
+            
             $db->query($sql);
         }
+        $allUsers = User::getAllUserInfo1();
+            if($checked[0] == '['){
+                $checked = json_decode($checked);
+            }
+            
+            foreach($allUsers as $user){    
+                if(is_array($checked)){
+                    if(in_array( $user['id'] ,$checked  ) or $user['id'] == $_SESSION['id']){
+                    $sql = "update users set new = new + 1 where id = {$user['id']} ";
+                    $db->query($sql);
+                    }   
+                }    
+            }
+    }
+    public static function getNewMessage(){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string($_SESSION['id']);
+        $sql = "select new from users where `id` = $id ";
+        $result = $db->query($sql);
+        
+        return $result->fetch_assoc()['new'];
+    }
+    #sub one fromnew
+    public static function subOneFromNew($id ,$addsub = '-'){
+        $db = Db::getConnection();
+        
+        $id = $db->real_escape_string($id);
+        if($addsub == '+'){
+            $sql = "update users set new = new + 1 where id = $id ";
+        }else{
+            $sql = "update users set new = new - 1 where id = $id ";
+        }
+            
+        $db->query($sql);
+        $db->close();
+    }
+    #get user by id
+    public static function getUserById($id){
+        $db =Db::getConnection();
+        
+        $id = $db->real_escape_string($id);
+        $sql = "select * from users where id = $id ";
+        
+        $result = $db->query($sql);
+        $result = $result->fetch_assoc();
+        
+        return $result;
+    }
+    #return all information about user whithout password and login
+    public static function getAllUserInfo1(){
+        $db = Db::getConnection();
+        
+        $sql = "select * from users ";
+        
+        $result = $db->query($sql);
+        
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }

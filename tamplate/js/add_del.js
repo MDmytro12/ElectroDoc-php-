@@ -23,5 +23,5 @@ function ajaxRequest( paraName , data){
         data: form ,
         processData: false,
         cache: false,
-        contentType: false,
+        contentType: false
     });}

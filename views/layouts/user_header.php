@@ -37,6 +37,7 @@
     <section>
         <div class="container">
             <div class="user-btn">
+                <div class='count-mesage'><?php if($newMessage !=  0){ echo '+ '.$newMessage;}else{echo $newMessage;}?></div>
                 <a href="cab" class='btn-doc  <?php if($doc_ann == 'doc'){ echo 'active'; }?>'>Документи</a>
                 <a href="add_ann" class='btn-ann  <?php if($doc_ann == 'ann' ){ echo 'active'; }?>'>Додати оголошення</a>
             </div>

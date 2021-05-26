@@ -195,19 +195,6 @@ header .link-logout.active {
 .user-btn .btn-doc:hover {
   background-color: #AAB2B5;
 }
-.user-btn .btn-doc:before {
-  content: "+1";
-  color: black;
-  padding-top: 10px;
-  width: 80px;
-  height: 49px;
-  background-color: #F2A5A5;
-  position: absolute;
-  border-radius: 30px;
-  top: -50%;
-  right: -6%;
-  z-index: 1;
-}
 .user-btn .btn-ann {
   background-color: #C0CDD2;
   border: none;
@@ -278,8 +265,7 @@ header .link-logout.active {
   height: 100%;
   min-height: 715px;
 }
-.block-doc .doc-img:after {
-  content: "Не переглянуто";
+.block-doc .doc-img .br {
   position: absolute;
   max-width: 230px;
   width: 100%;
@@ -291,10 +277,27 @@ header .link-logout.active {
   text-align: center;
   bottom: -4.6%;
   right: 42.5%;
+  display: none
 }
-.block-doc .doc-img.active:after {
-  content: "Переглянуто";
+.block-doc .doc-img .br.active{
+    display: block;
+}
+.block-doc .doc-img .br1 {
+  position: absolute;
+  max-width: 230px;
+  width: 100%;
+  padding: 5px;
   background-color: #559813;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 0.2em;
+  text-align: center;
+  bottom: -4.6%;
+  right: 42.5%;
+  display: none;
+}
+.block-doc .doc-img .br1.active{
+    display: block;
 }
 .block-doc .doc-info {
   min-width: 300px;
@@ -419,4 +422,22 @@ header .link-logout.active {
 }
 .under-doc span{
     letter-spacing: .1em;
+}
+.user-btn{
+    position: relative;
+}
+.count-mesage{
+    color: black;
+    padding-top: 10px;
+    width: 80px;
+    height: 49px;
+    background-color: #F2A5A5;
+    position: absolute;
+    border-radius: 30px;
+    top: 9%;
+    right: 49%;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
 }

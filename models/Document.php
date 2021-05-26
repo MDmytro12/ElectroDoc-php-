@@ -15,6 +15,15 @@ class Document{
     }
     #reutrn path to document photo 
     public static function getImage($id){
+        $db = Db::getConnection();
+        
+        $id  = $db->real_escape_string($id);
+        $sql = "select img_path from docs where id = $id ";
+        
+        $result = $db->query($sql);
+        $countOfImage = $result->fetch_assoc();
+        
+        
         $noPath = '/uploades/img/docs/doc.png';
         
         $yesPath = "/uploades/img/docs/doc_$id.png";
@@ -280,7 +289,9 @@ class Document{
         $sql = "delete from docs where `id` = $id ";
         
         $db->query($sql);
-        $db->close();
+        $id = $db->real_escape_string($_SESSION['id']);
+        
+        $db->close()    ;
     }
 }
 

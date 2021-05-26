@@ -12,10 +12,12 @@ return array(
     'admin/ch_user' => 'admin/checkedUsers',
     'admin/del_img' => 'admin/deleteImage',
     'admin/del_doc1' => 'admin/deleteDocument1',
+    'admin/br' => 'admin/browsed',
     
     'user/cab' => 'user/cabinet',
     'user/log' => 'user/logout',
     'user/add_ann' => 'user/addAnnounce',
+    'user/br' => 'user/browsed',
     
     '' => 'site/index',
 );

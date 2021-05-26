@@ -7,7 +7,18 @@ class AdminController{
            $adminInfo = Admin::getInfoAboutAdmin();
            $documentInfo = Document::getAllDocumentInfo();
            $announceInfo = Announce::getAllAnnounceInfo();
+           $allUserInfo = User::getAllUserInfo1();
+           $newMessage = User::getNewMessage();
            $doc_ann = 'doc';
+           
+           $userCount = 0 ;
+            for($i = 0 ; $i < count($allUserInfo) ; $i++ ){
+                if($allUserInfo[$i]['id'] == $_SESSION['id']){
+                    $userCount = $i;
+                    break;
+                }
+            }
+            
            
            if(isset($_SESSION['success'])){
                $_SESSION['success'] = false;
@@ -32,6 +43,8 @@ class AdminController{
             $allUsersIdentef = User::getAllUserIdentef();
             $_SESSION['empty_field']=false;
             $btn_user = 'add';
+            
+            $allUserInfo = User::getAllUserInfo();
             
             
             if(isset($_POST['submit-del']) and !empty($_POST['submit-del'])){
@@ -68,11 +81,13 @@ class AdminController{
 
                         $content = $_POST['content'];
                         
-                        User::setBrowsedAddDocument();
+                        print_r(User::setBrowsedAddDocument($checkedUsers));
                         Document::addNewDocument(count($allImages), $content, 'chief_of_English_department' , $checkedUsers);
                         
+                        
+                        
                         $_SESSION['success']=true;
-                        header('Location: /admin/adminis');
+                      header('Location: /admin/adminis');
                 }else{
                     $_SESSION['empty_field']=true;
                     foreach($allImages as $image){
@@ -109,6 +124,7 @@ class AdminController{
             $doc_ann = 'ann';
             $send = false ;
             $noUserName = false;
+            $newMessage = User::getNewMessage();
             
             if(isset($_POST['name']) and !empty($_POST['name']) and !empty($_POST['content'])){
                 $author = $_POST['name'];
@@ -311,14 +327,110 @@ class AdminController{
     }
     
     public function actionDeleteDocument1(){
+        
         if(isset($_POST['docDel']) and !empty($_POST['docDel'])){
             $_SESSION['dd'] = $_POST['docDel'];
+            
+            $allUserInfo = User::getAllUserInfo1();
+            $allDocumentInfo = Document::getAllDocumentInfo();
+            
+            #this user and document 
+            $thisDocument = Document::getInfoById($_SESSION['dd']);
+            
+            $documentCount = 0 ;
+            for($i = 0 ; $i < count($allDocumentInfo) ;$i++  ){
+                if($allDocumentInfo[$i]['id'] == $_SESSION['dd']){
+                    $documentCount = $i ; 
+                }
+            }
+            
+            $db = Db::getConnection();
+            
+            foreach($allUserInfo as $user){
+                if( (int)explode(',' , $user['browsed'])[$documentCount] == 0 ){
+                    $sql = "update users set new = new - 1 where id = {$user['id']} ";
+                    $db->query($sql);
+                    echo $user['identef'];
+                }
+            }
+            
         }
         
         if(isset($_POST['annDel']) and !empty($_POST['annDel'])){
             $_SESSION['ad'] = $_POST['annDel'];
         }
         
+    }
+    
+    public function actionBrowsed(){
+        
+        if(isset($_POST['browsedCount'])){
+            $db = Db::getConnection();
+            $idBr = $_POST['browsedCount'];
+            $allDocumentInfo = Document::getAllDocumentInfo();
+            $user = User::getUserById($_SESSION['id']);
+            
+            #delete 1 from new 
+            
+            User::subOneFromNew($_SESSION['id'], '-');
+            
+            #get users browsed
+            
+            $user['browsed'] = explode(',',$user['browsed']);
+            
+            $count = 0;
+            for($i = 0 ; $i < count($allDocumentInfo) ; $i++){
+                if($allDocumentInfo[$i]['id'] == $idBr ){
+                    $count = $i;
+                    break;
+                }
+            }
+            
+            $user['browsed'][$count] = 1;
+            
+            $user['browsed'] = implode(',' , $user['browsed']);
+            $id = $db->real_escape_string($_SESSION['id']);
+            
+            $browsed = $db->real_escape_string($user['browsed']);
+            $sql = "update users set browsed = '$browsed' where id = $id ";
+            
+            $db->query($sql);
+            
+            #get document browsed
+            
+            $document = false ;
+            for($i = 0 ; $i < count($allDocumentInfo) ; $i++){
+                if($allDocumentInfo[$i]['id']  == $idBr ){
+                    $document = $allDocumentInfo[$i];
+                }
+            }
+            
+            $allUserInfo = User::getAllUserInfo1();
+            $count = 0;
+            
+            for($i =  0; $i < count($allUserInfo) ; $i++){
+                if($allUserInfo[$i]['id'] == $_SESSION['id']){
+                    $count = $i;
+                }
+            }   
+            
+            $document['browsed'] = json_decode($document['browsed']);
+            
+            $document['browsed'][$count] = 1;
+            
+            $document['browsed'] = json_encode($document['browsed']);
+            $document = $db->real_escape_string(trim($document['browsed']));
+            
+            $sql = "update docs set browsed = '$document' where id = $idBr  ";
+            
+            $db->query($sql);
+            $db->close();
+            
+            
+            echo $idBr ;
+        }else{
+            echo 'false';
+        }
     }
 }
 
